@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools==75.8.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "st-catalog-manager"
+version = "0.1.0"
+description = "Local, lossless Tilda catalog manager for ST Education"
+requires-python = ">=3.12"
+dependencies = ["PySide6==6.8.3"]
+
+[project.scripts]
+st-catalog-manager = "st_catalog.__main__:main"
+
+[tool.setuptools.package-data]
+st_catalog = ["data/*.csv", "data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
